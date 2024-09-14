@@ -1,0 +1,443 @@
+[
+    {
+      "Division": "Summer Men's 24 | Summer Men's B Division",
+      "Team": "Brexit Boys",
+      "DayCanNotPlay1": "Friday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Disorderly Conduct",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed A Division",
+      "Team": "Dream Team",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed A Division",
+      "Team": "Hispano's",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed A Division",
+      "Team": "Kicking and Screening",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed A Division",
+      "Team": "The Good The Bad & The Ugly",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "FC Balls",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "Internationals FC (Coed)",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "Swamp Donkeys",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "The Somebodies",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "Unathletico FC",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed B Division",
+      "Team": "Vicious & Delicious",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "About to get Messi",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "FC Toepokes",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "Left Overs",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "Liverfools",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "Who Knows ",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed C Division",
+      "Team": "Y-Knots",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "early"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Booballs",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Cy-Kick FC",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Forfeit",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "early"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Hooligans",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "HumDingers",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Inferno Birdo",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Purple Cobras",
+      "DayCanNotPlay1": "Friday",
+      "DayCanNotPlay2": "Monday",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "SAVAGE'S",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "The Scrubz",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed D Division",
+      "Team": "Yellow Jackets",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "AFC Richmond",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Arsenal",
+      "DayCanNotPlay1": "Wednesday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Chubby Squonks",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Wednesday",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Fuego Co-Ed",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Fuego women",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Hakuna Matata",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Hub City United",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Co-Ed 24 | Co-Ed E Division",
+      "Team": "Them",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "Cyclops FC",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "Frigoles",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "HighPoint X",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Wednesday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "Latinos",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "Los Reyes",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's A Division",
+      "Team": "Michoacán FC",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's B Division",
+      "Team": "Autlan FC",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's B Division",
+      "Team": "Internationals FC",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's B Division",
+      "Team": "RagTags",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "ATLAS",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "Ballers",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "Lubbock Cruz Azul",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "S.O.L",
+      "DayCanNotPlay1": "Friday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "Shag Nasties",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's C Division",
+      "Team": "TOMA",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "Dadadors",
+      "DayCanNotPlay1": "Wednesday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "Lobos",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "NBC FC",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "Panthers FC",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "Sub Bup",
+      "DayCanNotPlay1": "Wednesday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "late"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's D Division",
+      "Team": "Young brothers",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "B-Team Boys",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "Cobras FC",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "FC Bravos",
+      "DayCanNotPlay1": "",
+      "DayCanNotPlay2": "",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "Flatland United",
+      "DayCanNotPlay1": "Wednesday",
+      "DayCanNotPlay2": "Tuesday",
+      "TimePreference": ""
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "Fuego Men",
+      "DayCanNotPlay1": "Thursday",
+      "DayCanNotPlay2": "Friday",
+      "TimePreference": "middle"
+    },
+    {
+      "Division": "Summer Men's 24 | Summer Men's E Division",
+      "Team": "Tigris FC",
+      "DayCanNotPlay1": "Monday",
+      "DayCanNotPlay2": "",
+      "TimePreference": "middle"
+    }
+  ]
