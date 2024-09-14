@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const maxDuration = 60;
+
 export async function POST(request: Request) {
   const { message } = await request.json();
 
@@ -19,8 +21,6 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           model: "gpt-3.5-turbo", // Updated to use GPT-3.5-Turbo
           messages: [{ role: "user", content: message }], // The structure for chat models
-          max_tokens: 100, // Adjust response length
-          temperature: 0.7, // Adjust creativity
         }),
       }
     );

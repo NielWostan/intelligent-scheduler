@@ -1,5 +1,15 @@
 import React from "react";
 
+function getStringAfterPipe(inputString: string) {
+  const indexOfPipe = inputString.indexOf("|");
+
+  if (indexOfPipe === -1) {
+    return inputString;
+  }
+
+  return inputString.substring(indexOfPipe + 1).trim();
+}
+
 function printGames(games: any) {
   return (
     <>
@@ -11,7 +21,8 @@ function printGames(games: any) {
               return (
                 <>
                   <p>
-                    {game.division}: {game.teamA} vs {game.teamB}
+                    {getStringAfterPipe(game.division)}: {game.teamA} vs{" "}
+                    {game.teamB}
                   </p>
                 </>
               );
@@ -25,7 +36,7 @@ function printGames(games: any) {
 
 export default function Games({ allGames }: any) {
   return (
-    <div className="flex flex-col w-1/2 border border-black h-full overflow-auto">
+    <div className="flex flex-col w-2/5 border border-black h-full overflow-auto">
       {printGames(allGames)}
     </div>
   );

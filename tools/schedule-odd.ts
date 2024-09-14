@@ -37,9 +37,10 @@ export const scheduleOdd = (teams: any) => {
         doubleGameTeam,
         otherTeams.filter((t: any) => t !== opponent1)
       );
+      console.log("HERE:", opponent1);
 
-      roundMatches.push(`${doubleGameTeam} vs ${opponent1}`);
-      roundMatches.push(`${doubleGameTeam} vs ${opponent2}`);
+      roundMatches.push([doubleGameTeam, opponent1]);
+      roundMatches.push([doubleGameTeam, opponent2]);
 
       matchesPlayed[doubleGameTeam][opponent1] = true;
       matchesPlayed[doubleGameTeam][opponent2] = true;
@@ -52,7 +53,7 @@ export const scheduleOdd = (teams: any) => {
       while (otherTeams.length > 1) {
         let team1 = otherTeams[0];
         let team2 = findOpponent(team1, otherTeams.slice(1));
-        roundMatches.push(`${team1} vs ${team2}`);
+        roundMatches.push([team1, team2]);
 
         matchesPlayed[team1][team2] = true;
         matchesPlayed[team2][team1] = true;
@@ -71,7 +72,7 @@ export const scheduleOdd = (teams: any) => {
       while (otherTeams.length > 1) {
         let team1 = otherTeams[0];
         let team2 = findOpponent(team1, otherTeams.slice(1));
-        roundMatches.push(`${team1} vs ${team2}`);
+        roundMatches.push([team1, team2]);
 
         matchesPlayed[team1][team2] = true;
         matchesPlayed[team2][team1] = true;
@@ -82,7 +83,7 @@ export const scheduleOdd = (teams: any) => {
       }
     }
 
-    schedule.push({ round: round, matches: roundMatches });
+    schedule.push(roundMatches);
   }
 
   return schedule;
