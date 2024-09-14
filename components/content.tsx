@@ -145,7 +145,7 @@ export default async function Content() {
     <>
       <Games allGames={formattedGames} />
       <div className="flex flex-col h-full w-1/2">
-        <Schedule />
+        <Schedule allGames={formattedGames} />
         <ChatBox />
       </div>
     </>

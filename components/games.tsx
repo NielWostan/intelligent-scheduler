@@ -11,7 +11,7 @@ function printGames(games: any) {
               return (
                 <>
                   <p>
-                    {game.teamA} vs {game.teamB}
+                    {game.division}: {game.teamA} vs {game.teamB}
                   </p>
                 </>
               );
