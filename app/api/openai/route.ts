@@ -19,7 +19,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, // Your OpenAI API key
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo", // Updated to use GPT-3.5-Turbo
+          model: "gpt-4o", // Updated to use GPT-3.5-Turbo
           messages: [{ role: "user", content: message }], // The structure for chat models
         }),
       }

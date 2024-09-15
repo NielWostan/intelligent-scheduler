@@ -42,71 +42,71 @@ export default function TeamDashboard({ team }: TeamDashboardProps) {
   };
 
   return (
-    <div className="p-4 border border-gray-300 rounded-lg shadow-md w-3/4 mx-auto">
-      <div className="flex flex-col space-y-4">
+    <div className="flex flex-col h-full p-8 w-3/4 mx-auto bg-white">
+      <div className="flex flex-col space-y-4 h-full">
         <h2 className="text-2xl font-semibold">Edit Team Information</h2>
 
         {/* Editable Form */}
-        <div>
-          <label className="block text-gray-700">Team Name</label>
+        <div className="flex flex-col flex-grow">
+          <label className="block text-gray-700 mb-2">Team Name</label>
           <input
             type="text"
             name="team_name"
             value={updatedTeam.team_name}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-gray-300 rounded"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-700">Division</label>
+        <div className="flex flex-col flex-grow">
+          <label className="block text-gray-700 mb-2">Division</label>
           <input
             type="text"
             name="division"
             value={updatedTeam.division}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-gray-300 rounded"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-700">Day Constraint 1</label>
+        <div className="flex flex-col flex-grow">
+          <label className="block text-gray-700 mb-2">Day Constraint 1</label>
           <input
             type="text"
             name="day_constraint_1"
             value={updatedTeam.day_constraint_1}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-gray-300 rounded"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-700">Day Constraint 2</label>
+        <div className="flex flex-col flex-grow">
+          <label className="block text-gray-700 mb-2">Day Constraint 2</label>
           <input
             type="text"
             name="day_constraint_2"
             value={updatedTeam.day_constraint_2}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-gray-300 rounded"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-700">Time Preference</label>
+        <div className="flex flex-col flex-grow">
+          <label className="block text-gray-700 mb-2">Time Preference</label>
           <input
             type="text"
             name="time_preference"
             value={updatedTeam.time_preference}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-gray-300 rounded"
           />
         </div>
 
         {/* Save Button */}
-        <div className="flex space-x-4">
+        <div className="flex justify-end">
           <button
             onClick={handleSave}
-            className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 w-full`}
+            className="w-full px-4 py-4 bg-blue-500 text-white rounded hover:bg-blue-700"
           >
             Save
           </button>

@@ -21,21 +21,26 @@ function createSlug(text: any) {
 
 export default function TeamCard({ item }: any) {
   return (
-    <div className="flex border-t border-black even:bg-gray-100">
-      <div className="w-1/5 p-4 border-r border-black">{item.team_name}</div>
-      <div className="w-1/5 p-4 border-r border-black">
+    <div className="flex border-t border-gray-300 even:bg-gray-50 hover:bg-gray-100 transition duration-200 ease-in-out">
+      {/* Increased width for team name */}
+      <div className="w-1/4 p-4 border-r border-gray-300">{item.team_name}</div>
+      <div className="w-1/5 p-4 border-r border-gray-300">
         {getStringAfterPipe(item.division)}
       </div>
-      <div className="w-1/5 p-4 border-r border-black">
+      <div className="w-1/5 p-4 border-r border-gray-300">
         {item.day_constraint_1}
       </div>
-      <div className="w-1/5 p-4 border-r border-black">
+      <div className="w-1/5 p-4 border-r border-gray-300">
         {item.day_constraint_2}
       </div>
-      <div className="w-1/5 p-4 border-r border-black">
+      <div className="w-1/5 p-4 border-r border-gray-300">
         {item.time_preference}
       </div>
-      <Link href={`/teams/${item.id}`} className="w-1/5 p-4 border-black">
+      {/* Reduced width for the Actions */}
+      <Link
+        href={`/teams/${item.id}`}
+        className="w-1/6 p-4 text-blue-500 hover:text-blue-700 transition duration-200 ease-in-out"
+      >
         Edit
       </Link>
     </div>

@@ -7,35 +7,38 @@ export default async function Page() {
   const { data: teams, error } = await supabase.from("teams").select("*");
 
   if (error) {
-    return <div>Error loading teams</div>;
+    return <div className="text-center text-red-500">Error loading teams</div>;
   }
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-gray-50">
       <Header />
       <div className="flex flex-col h-4/5 w-full">
-        <div className="flex flex-col border border-black">
+        {/* Added mb-8 here */}
+        <div className="flex flex-col bg-white">
           {/* Table Header */}
-          <div className="flex bg-gray-200">
-            <div className="w-1/5 p-4 border-r border-black">Team Name</div>
-            <div className="w-1/5 p-4 border-r border-black">Division</div>
-            <div className="w-1/5 p-4 border-r border-black">
+          <div className="flex bg-gray-200 font-semibold text-gray-700 rounded-t-lg">
+            {/* Increased width for Team Name */}
+            <div className="w-1/4 p-4 border-r border-gray-300">Team Name</div>
+            <div className="w-1/5 p-4 border-r border-gray-300">Division</div>
+            <div className="w-1/5 p-4 border-r border-gray-300">
               Day Constraint 1
             </div>
-            <div className="w-1/5 p-4 border-r border-black">
+            <div className="w-1/5 p-4 border-r border-gray-300">
               Day Constraint 2
             </div>
-            <div className="w-1/5 p-4 border-r border-black">
+            <div className="w-1/5 p-4 border-r border-gray-300">
               Time Preference
             </div>
-            <div className="w-1/5 p-4 border-black"></div>
+            {/* Reduced width for Actions */}
+            <div className="w-1/6 p-4">Actions</div>
           </div>
 
           {/* Table Rows */}
           {teams ? (
             teams.map((item, index) => <TeamCard key={index} item={item} />)
           ) : (
-            <div className="p-4">Loading teams...</div>
+            <div className="p-4 text-center">Loading teams...</div>
           )}
         </div>
       </div>

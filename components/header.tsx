@@ -2,21 +2,27 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="w-full h-1/5 border border-black flex flex-col items-center justify-between">
-      <Link href="/" className="text-4xl border border-black mt-12">
+    <div className="w-full h-1/5 bg-gray-100 shadow-md flex flex-col items-center justify-between py-4 z-40">
+      {/* Title */}
+      <Link href="/" className="text-4xl font-semibold text-blue-600 mt-4">
         Intelligent Scheduler
       </Link>
-      <div className="flex w-full border border-black justify-end">
+
+      {/* Navigation Links */}
+      <div className="flex w-full max-w-lg space-x-4 mt-4 justify-center">
         <Link
           href="/teams/add-team"
-          className="border border-black p-2 w-auto px-6"
+          className="flex-grow bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition text-center"
         >
           Add Team
         </Link>
-        <Link href="/teams" className="border border-black p-2 w-auto px-6">
+        <Link
+          href="/teams"
+          className="flex-grow bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition text-center"
+        >
           Manage Teams
         </Link>
-        <button className="border border-black p-2 w-auto px-6">
+        <button className="flex-grow bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition text-center">
           Export Schedule
         </button>
       </div>

@@ -12,7 +12,9 @@ export default async function Page({ params }: any) {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <TeamDashboard team={teams ? teams[0] : {}} />
+      <div className="h-4/5">
+        <TeamDashboard team={teams ? teams[0] : {}} />
+      </div>
     </div>
   );
 }

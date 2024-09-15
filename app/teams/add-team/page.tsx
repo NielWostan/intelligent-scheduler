@@ -6,7 +6,9 @@ export default function Page() {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <AddTeam />
+      <div className="h-4/5">
+        <AddTeam />
+      </div>
     </div>
   );
 }
