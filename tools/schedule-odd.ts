@@ -41,10 +41,18 @@ export const scheduleOdd = (teams: any) => {
       roundMatches.push([doubleGameTeam, opponent1]);
       roundMatches.push([doubleGameTeam, opponent2]);
 
-      matchesPlayed[doubleGameTeam][opponent1] = true;
-      matchesPlayed[doubleGameTeam][opponent2] = true;
-      matchesPlayed[opponent1][doubleGameTeam] = true;
-      matchesPlayed[opponent2][doubleGameTeam] = true;
+      matchesPlayed[doubleGameTeam]
+        ? (matchesPlayed[doubleGameTeam][opponent1] = true)
+        : null;
+      matchesPlayed[doubleGameTeam]
+        ? (matchesPlayed[doubleGameTeam][opponent2] = true)
+        : null;
+      matchesPlayed[opponent1]
+        ? (matchesPlayed[opponent1][doubleGameTeam] = true)
+        : null;
+      matchesPlayed[opponent2]
+        ? (matchesPlayed[opponent2][doubleGameTeam] = true)
+        : null;
 
       otherTeams = otherTeams.filter(
         (team: any) => team !== opponent1 && team !== opponent2

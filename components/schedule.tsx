@@ -3,6 +3,8 @@
 import { useState } from "react";
 import CalendarGrid from "./calendar-grid";
 import { schedule } from "@/_data/_test-week";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
 
 interface ScheduleProps {
   allGames: any;
@@ -16,6 +18,7 @@ interface ScheduleProps {
   exporting: boolean;
   updateText: string;
   setUpdateText: (text: string) => void;
+  handleRestart: () => void;
 }
 
 export default function Schedule({
@@ -29,6 +32,7 @@ export default function Schedule({
   exporting,
   updateText,
   setUpdateText,
+  handleRestart,
 }: ScheduleProps) {
   return (
     <div
@@ -89,6 +93,8 @@ export default function Schedule({
             </p>
           )}
         </button>
+
+        {/* Export Button */}
         <button
           className={`w-1/5 text-black transition bg-blue-500 text-white p-2 rounded hover:bg-blue-700 rounded-lg mx-2 ${loading ? "hover:bg-blue-500 cursor-not-allowed" : ""}`}
           onClick={exportData}
@@ -103,6 +109,15 @@ export default function Schedule({
             </p>
           )}
         </button>
+
+        {/* Restart Button */}
+        <button
+          className={`w-min flex items-center justify-center justify-center text-black transition bg-gray-500 text-white p-2 rounded hover:bg-gray-700 rounded-lg mx-auto px-auto ${loading ? "hover:bg-gray-500 cursor-not-allowed" : ""}`}
+          onClick={handleRestart}
+          disabled={loading}
+        >
+          <FontAwesomeIcon icon={faArrowRotateRight} className="mx-2" />
+        </button>
       </div>
 
       {/* Calendar Grid */}
@@ -111,7 +126,7 @@ export default function Schedule({
           <CalendarGrid
             weekgames={allGames[currentWeek - 1]}
             schedule={
-              response.filter((item: any) => item.week === currentWeek)[0]
+              response.filter((item: any) => item?.week === currentWeek)[0]
                 ?.games || []
             }
           />

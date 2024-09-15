@@ -158,10 +158,9 @@ export default function AIGenerative({ allGames, schedule }: any) {
     setLoading(false);
   };
 
-  console.log(updateText);
-
   const exportData = async () => {
     setExporting(true);
+    console.log(response);
     try {
       const res = await fetch("/api/exportData", {
         method: "POST",
@@ -172,12 +171,29 @@ export default function AIGenerative({ allGames, schedule }: any) {
       });
 
       const data = await res.json();
+      if (res.ok) {
+        window.alert("Data exported successfully.");
+      } else {
+        window.alert("An error occurred exporting. Please try again.");
+      }
     } catch (error) {
       console.error("Error:", error);
       window.alert("Something went wrong.");
     }
     setExporting(false);
   };
+
+  function handleRestart() {
+    setResponse((prev: any) => {
+      return prev.map((item: any) => {
+        if (item?.week == currentWeek) {
+          return { ...item, games: [] };
+        } else {
+          return { ...item, week: item.week, games: item.games };
+        }
+      });
+    });
+  }
 
   return (
     <div className="flex flex-col h-full w-4/5">
@@ -193,6 +209,7 @@ export default function AIGenerative({ allGames, schedule }: any) {
         exporting={exporting}
         updateText={updateText}
         setUpdateText={setUpdateText}
+        handleRestart={handleRestart}
       />
       <ChatBox
         currentWeek={currentWeek}

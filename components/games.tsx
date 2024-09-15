@@ -1,13 +1,13 @@
 import React from "react";
 
 function getStringAfterPipe(inputString: string) {
-  const indexOfPipe = inputString.indexOf("|");
+  const indexOfPipe = inputString?.indexOf("|");
 
   if (indexOfPipe === -1) {
     return inputString;
   }
 
-  return inputString.substring(indexOfPipe + 1).trim();
+  return inputString?.substring(indexOfPipe + 1).trim();
 }
 
 function printGames(games: any) {

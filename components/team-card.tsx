@@ -38,7 +38,7 @@ export default function TeamCard({ item }: any) {
       </div>
       {/* Reduced width for the Actions */}
       <Link
-        href={`/teams/${item.id}`}
+        href={`/teams/${createSlug(item.team_name)}`}
         className="w-1/6 p-4 text-blue-500 hover:text-blue-700 transition duration-200 ease-in-out"
       >
         Edit

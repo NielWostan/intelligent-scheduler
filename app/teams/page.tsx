@@ -1,14 +1,17 @@
 import Header from "@/components/header";
 import TeamCard from "@/components/team-card"; // Modify this component to use divs instead of table rows
 import { createClient } from "@/utils/supabase/server";
+// @ts-ignore
+import clientPromise from "../../lib/mongodb";
 
 export default async function Page() {
-  const supabase = createClient();
-  const { data: teams, error } = await supabase.from("teams").select("*");
+  // const supabase = createClient();
+  // const { data: teams, error } = await supabase.from("teams").select("*");
 
-  if (error) {
-    return <div className="text-center text-red-500">Error loading teams</div>;
-  }
+  // @ts-ignore
+  const client = await clientPromise;
+  const db = client.db("intelligent-scheduler");
+  const teams: any[] = await db.collection("teams").find().toArray();
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">

@@ -6,11 +6,19 @@ import { scheduleEven } from "@/tools/schedule-even";
 import { scheduleOdd } from "@/tools/schedule-odd";
 import { createClient } from "@/utils/supabase/server";
 import AIGenerative from "./ai-generative";
+// @ts-ignore
+import clientPromise from "../lib/mongodb";
 
 export default async function Content() {
-  const supabase = createClient();
-  const { data: teams } = await supabase.from("teams").select("*");
-  const { data: schedule } = await supabase.from("schedule").select("*");
+  // const supabase = createClient();
+  // const { data: teams } = await supabase.from("teams").select("*");
+  // const { data: schedule } = await supabase.from("schedule").select("*");
+
+  // @ts-ignore
+  const client = await clientPromise;
+  const db = client.db("intelligent-scheduler");
+  const teams: any[] = await db.collection("teams").find().toArray();
+  const schedule: any[] = await db.collection("schedule").find().toArray();
 
   const mensA = teams?.filter(
     (team) => team.division == "Summer Men's 24 | Summer Men's A Division"
