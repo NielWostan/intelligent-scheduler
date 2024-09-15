@@ -3,14 +3,35 @@ import { createClient } from "@/utils/supabase/server";
 // @ts-ignore
 import clientPromise from "../../../lib/mongodb";
 import { ObjectId } from "mongodb";
+import { createSlug } from "@/tools/create-slug";
 
-function createSlug(text: any) {
-  return text
-    .toLowerCase() // Convert to lowercase
-    .trim() // Remove whitespace from both ends
-    .replace(/[^\w\s-]/g, "") // Remove special characters except for hyphens and spaces
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-"); // Ensure there's only one hyphen between words
+function getDivision(div: string) {
+  const divisions = [
+    "Summer Men's 24 | Summer Men's A Division",
+    "Summer Men's 24 | Summer Men's B Division",
+    "Summer Men's 24 | Summer Men's C Division",
+    "Summer Men's 24 | Summer Men's D Division",
+    "Summer Men's 24 | Summer Men's E Division",
+    "Summer Co-Ed 24 | Co-Ed A Division",
+    "Summer Co-Ed 24 | Co-Ed B Division",
+    "Summer Co-Ed 24 | Co-Ed C Division",
+    "Summer Co-Ed 24 | Co-Ed D Division",
+    "Summer Co-Ed 24 | Co-Ed E Division",
+  ];
+
+  for (let i = 0; i < divisions.length; i++) {
+    if (
+      div &&
+      divisions[i]
+        .toLowerCase()
+        .replace(/'/g, "")
+        .replace(/-/g, "")
+        .includes(div.toLowerCase())
+    ) {
+      return divisions[i];
+    }
+  }
+  return "Summer Men's/Co-Ed 24 | Not Assigned";
 }
 
 export async function POST(request: Request) {
@@ -20,6 +41,9 @@ export async function POST(request: Request) {
 
     // Log the received data for debugging
     console.log("Received updated team data:", updatedTeam);
+
+    updatedTeam.division = getDivision(updatedTeam.division);
+    console.log(updatedTeam);
 
     // // Initialize Supabase client
     // const supabase = createClient();

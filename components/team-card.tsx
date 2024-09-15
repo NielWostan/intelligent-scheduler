@@ -1,3 +1,4 @@
+import { createSlug } from "@/tools/create-slug";
 import Link from "next/link";
 
 function getStringAfterPipe(inputString: string) {
@@ -8,15 +9,6 @@ function getStringAfterPipe(inputString: string) {
   }
 
   return inputString.substring(indexOfPipe + 1).trim();
-}
-
-function createSlug(text: any) {
-  return text
-    .toLowerCase() // Convert to lowercase
-    .trim() // Remove whitespace from both ends
-    .replace(/[^\w\s-]/g, "") // Remove special characters except for hyphens and spaces
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-"); // Ensure there's only one hyphen between words
 }
 
 export default function TeamCard({ item }: any) {

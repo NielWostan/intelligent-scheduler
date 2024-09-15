@@ -1,5 +1,6 @@
 "use client";
 
+import { createSlug } from "@/tools/create-slug";
 import { useState } from "react";
 
 export default function AddTeam() {
@@ -34,7 +35,9 @@ export default function AddTeam() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ updatedTeam: newTeam }),
+        body: JSON.stringify({
+          updatedTeam: { ...newTeam, slug: createSlug(newTeam.team_name) },
+        }),
       });
 
       const result = await response.json();
