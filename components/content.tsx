@@ -5,6 +5,7 @@ import { formatGames } from "@/tools/format-games";
 import { scheduleEven } from "@/tools/schedule-even";
 import { scheduleOdd } from "@/tools/schedule-odd";
 import { createClient } from "@/utils/supabase/server";
+import AIGenerative from "./ai-generative";
 
 export default async function Content() {
   const supabase = createClient();
@@ -144,10 +145,7 @@ export default async function Content() {
   return (
     <>
       <Games allGames={formattedGames} />
-      <div className="flex flex-col h-full w-3/5">
-        <Schedule allGames={formattedGames} />
-        <ChatBox />
-      </div>
+      <AIGenerative allGames={formattedGames} />
     </>
   );
 }

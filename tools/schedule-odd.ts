@@ -37,7 +37,6 @@ export const scheduleOdd = (teams: any) => {
         doubleGameTeam,
         otherTeams.filter((t: any) => t !== opponent1)
       );
-      console.log("HERE:", opponent1);
 
       roundMatches.push([doubleGameTeam, opponent1]);
       roundMatches.push([doubleGameTeam, opponent2]);
