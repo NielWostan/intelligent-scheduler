@@ -104,6 +104,7 @@ export default function AIGenerative({ allGames }: any) {
         response={response}
         setResponse={setResponse}
         handleSendMessage={handleSendMessage}
+        loading={loading}
       />
       <ChatBox
         currentWeek={currentWeek}

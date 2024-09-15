@@ -11,6 +11,7 @@ interface ScheduleProps {
   response: any;
   setResponse: (response: any) => void;
   handleSendMessage: () => void;
+  loading: boolean;
 }
 
 export default function Schedule({
@@ -19,9 +20,12 @@ export default function Schedule({
   setCurrentWeek,
   response,
   handleSendMessage,
+  loading,
 }: ScheduleProps) {
   return (
-    <div className="flex flex-col h-4/5 bg-white px-6 justify-evenly">
+    <div
+      className={`flex flex-col h-4/5 bg-white px-6 justify-evenly ${loading ? "opacity-50" : ""}`}
+    >
       {/* Header Section */}
       <div className="flex flex-row justify-center">
         <div className="flex flex-row w-4/5 justify-between items-center">
@@ -62,7 +66,14 @@ export default function Schedule({
           className="w-1/5 text-black transition p-2 border border-black rounded-lg ml-8"
           onClick={handleSendMessage}
         >
-          Generate
+          {!loading ? (
+            <p>Generate</p>
+          ) : (
+            <p>
+              Generating
+              <span className="relative after:content-['...'] h-[30px] after:absolute after:top-0 after:left-0 after:animate-dots"></span>
+            </p>
+          )}
         </button>
       </div>
 

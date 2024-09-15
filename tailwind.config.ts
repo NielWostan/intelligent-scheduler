@@ -52,6 +52,20 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        keyframes: {
+          "ping-slow": {
+            "50%": { transform: "scale(1.4)" },
+          },
+          dots: {
+            "0%, 100%": { content: '"."' },
+            "33%": { content: '".."' },
+            "66%": { content: '"..."' },
+          },
+        },
+        animation: {
+          "ping-slow": "ping-slow 3s ease-in-out infinite",
+          dots: "dots 1.0s steps(1,end) infinite",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -59,18 +73,18 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        "ping-slow": {
+          "50%": { transform: "scale(1.4)" },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        dots: {
+          "0%, 100%": { content: '"."' },
+          "33%": { content: '".."' },
+          "66%": { content: '"..."' },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "ping-slow": "ping-slow 3s ease-in-out infinite",
+        dots: "dots 1.0s steps(1,end) infinite",
       },
     },
   },
