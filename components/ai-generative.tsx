@@ -4,20 +4,25 @@ import { formatExportGames } from "@/tools/format-export-games";
 import ChatBox from "./chat-box";
 import Schedule from "./schedule";
 import { useState } from "react";
+import { parseExportGames } from "@/tools/parse-export-games";
 
-export default function AIGenerative({ allGames }: any) {
-  const [response, setResponse] = useState<any>([
-    { week: 1, games: [] },
-    { week: 2, games: [] },
-    { week: 3, games: [] },
-    { week: 4, games: [] },
-    { week: 5, games: [] },
-    { week: 6, games: [] },
-    { week: 7, games: [] },
-    { week: 8, games: [] },
-    { week: 9, games: [] },
-    { week: 10, games: [] },
-  ]);
+export default function AIGenerative({ allGames, schedule }: any) {
+  const [response, setResponse] = useState<any>(
+    schedule.length > 0
+      ? parseExportGames(schedule)
+      : [
+          { week: 1, games: [] },
+          { week: 2, games: [] },
+          { week: 3, games: [] },
+          { week: 4, games: [] },
+          { week: 5, games: [] },
+          { week: 6, games: [] },
+          { week: 7, games: [] },
+          { week: 8, games: [] },
+          { week: 9, games: [] },
+          { week: 10, games: [] },
+        ]
+  );
   const [loading, setLoading] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [currentWeek, setCurrentWeek] = useState(1);
@@ -134,7 +139,7 @@ export default function AIGenerative({ allGames }: any) {
         updateText={updateText}
         setUpdateText={setUpdateText}
         handleUpdateMessage={handleUpdateMessage}
-        hasGeneratedSchedule={hasGeneratedSchedule}
+        hasGeneratedSchedule={response[currentWeek - 1].games.length > 0}
       />
     </div>
   );

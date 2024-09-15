@@ -10,6 +10,7 @@ import AIGenerative from "./ai-generative";
 export default async function Content() {
   const supabase = createClient();
   const { data: teams } = await supabase.from("teams").select("*");
+  const { data: schedule } = await supabase.from("schedule").select("*");
 
   const mensA = teams?.filter(
     (team) => team.division == "Summer Men's 24 | Summer Men's A Division"
@@ -145,7 +146,7 @@ export default async function Content() {
   return (
     <>
       <Games allGames={formattedGames} />
-      <AIGenerative allGames={formattedGames} />
+      <AIGenerative allGames={formattedGames} schedule={schedule} />
     </>
   );
 }
