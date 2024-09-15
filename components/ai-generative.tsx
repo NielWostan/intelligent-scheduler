@@ -99,7 +99,22 @@ export default function AIGenerative({ allGames, schedule }: any) {
     setLoading(false);
   };
 
-  const updatePrompt = `For the given data: ${JSON.stringify(response[currentWeek - 1].games)}. Perform the following task: "${updateText}". Return only an object of array. Do not return any text. Still give the complete data, keeping all the other data same`;
+  const updatePrompt = `For the given data: ${JSON.stringify(response[currentWeek - 1].games)}. Perform the following task: "${updateText}". Return only an object of array of this form 
+  [{
+            teamA: “First team”,
+            teamB: “”Second team,
+            division: “Men's A”,
+            dayConstraint1: “Monday”,
+            dayConstraint2: null,
+            dayConstraint3: “Tuesday”,
+            dayConstraint4: null,
+            timePreference1: late,
+            timePreference2: middle,
+            scheduledDay: "Thursday",
+            scheduledTime: "8:00",
+            isCompromised: false,
+    }].
+    Do not return any text. Still give the complete data, keeping all the other data same`;
 
   const handleUpdateMessage = async () => {
     setLoading(true);
