@@ -1,5 +1,6 @@
 "use client";
 
+import { formatExportGames } from "@/tools/format-export-games";
 import ChatBox from "./chat-box";
 import Schedule from "./schedule";
 import { useState } from "react";
@@ -18,6 +19,7 @@ export default function AIGenerative({ allGames }: any) {
     { week: 10, games: [] },
   ]);
   const [loading, setLoading] = useState(false);
+  const [exporting, setExporting] = useState(false);
   const [currentWeek, setCurrentWeek] = useState(1);
   const [updateText, setUpdateText] = useState("");
   const [hasGeneratedSchedule, setHasGeneratedSchedule] = useState(false);
@@ -95,6 +97,25 @@ export default function AIGenerative({ allGames }: any) {
     setLoading(false);
   };
 
+  const exportData = async () => {
+    setExporting(true);
+    try {
+      const res = await fetch("/api/exportData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ req: formatExportGames(response) }),
+      });
+
+      const data = await res.json();
+    } catch (error) {
+      console.error("Error:", error);
+      setResponse("Something went wrong.");
+    }
+    setExporting(false);
+  };
+
   return (
     <div className="flex flex-col h-full w-4/5">
       <Schedule
@@ -105,6 +126,8 @@ export default function AIGenerative({ allGames }: any) {
         setResponse={setResponse}
         handleSendMessage={handleSendMessage}
         loading={loading}
+        exportData={exportData}
+        exporting={exporting}
       />
       <ChatBox
         currentWeek={currentWeek}

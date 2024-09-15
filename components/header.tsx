@@ -22,9 +22,6 @@ export default function Header() {
         >
           Manage Teams
         </Link>
-        <button className="flex-grow bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition text-center">
-          Export Schedule
-        </button>
       </div>
     </div>
   );

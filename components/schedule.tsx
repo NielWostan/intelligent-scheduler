@@ -12,6 +12,8 @@ interface ScheduleProps {
   setResponse: (response: any) => void;
   handleSendMessage: () => void;
   loading: boolean;
+  exportData: () => void;
+  exporting: boolean;
 }
 
 export default function Schedule({
@@ -21,10 +23,12 @@ export default function Schedule({
   response,
   handleSendMessage,
   loading,
+  exportData,
+  exporting,
 }: ScheduleProps) {
   return (
     <div
-      className={`flex flex-col h-4/5 bg-white px-6 justify-evenly ${loading ? "opacity-50" : ""}`}
+      className={`flex flex-col h-4/5 bg-white px-6 justify-evenly ${loading || exporting ? "opacity-50" : ""}`}
     >
       {/* Header Section */}
       <div className="flex flex-row justify-center">
@@ -63,7 +67,7 @@ export default function Schedule({
 
         {/* Generate Schedule Button */}
         <button
-          className="w-1/5 text-black transition p-2 border border-black rounded-lg ml-8"
+          className="w-1/5 text-black transition p-2 border border-black rounded-lg ml-4 mr-2"
           onClick={handleSendMessage}
         >
           {!loading ? (
@@ -71,6 +75,19 @@ export default function Schedule({
           ) : (
             <p>
               Generating
+              <span className="relative after:content-['...'] h-[30px] after:absolute after:top-0 after:left-0 after:animate-dots"></span>
+            </p>
+          )}
+        </button>
+        <button
+          className="w-1/5 text-black transition bg-blue-500 text-white p-2 rounded hover:bg-blue-700 rounded-lg mx-2"
+          onClick={exportData}
+        >
+          {!exporting ? (
+            <p>Export</p>
+          ) : (
+            <p>
+              Exporting
               <span className="relative after:content-['...'] h-[30px] after:absolute after:top-0 after:left-0 after:animate-dots"></span>
             </p>
           )}
