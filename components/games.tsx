@@ -42,7 +42,7 @@ function printGames(games: any) {
 
 export default function Games({ allGames }: any) {
   return (
-    <div className="flex flex-col w-2/5 mx-auto p-0 shadow-lg h-full overflow-auto bg-white">
+    <div className="flex flex-col w-full lg:w-2/5 mx-auto p-0 shadow-lg h-full overflow-auto bg-white hidden lg:flex">
       {printGames(allGames)}
     </div>
   );

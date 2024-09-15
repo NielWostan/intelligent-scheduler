@@ -195,7 +195,7 @@ export default function AIGenerative({ allGames, schedule }: any) {
   }
 
   return (
-    <div className="flex flex-col h-full w-4/5">
+    <div className="flex flex-col h-full w-full lg-w-4/5">
       <Schedule
         allGames={allGames}
         currentWeek={currentWeek}
