@@ -39,7 +39,6 @@ export async function POST(request: Request) {
     const { updatedTeam } = await request.json();
 
     updatedTeam.division = getDivision(updatedTeam.division);
-    console.log(updatedTeam);
 
     // // Initialize Supabase client
     // const supabase = createClient();

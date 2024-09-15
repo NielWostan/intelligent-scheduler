@@ -45,6 +45,28 @@ export default function TeamDashboard({ team }: TeamDashboardProps) {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      console.log("TEAM:", team);
+      const res = await fetch("/api/delete-team", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ team }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        window.alert("Team deleted successfully.");
+      } else {
+        window.alert("An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div className="flex flex-col h-full p-8 w-3/4 mx-auto bg-white">
       <div className="flex flex-col space-y-4 h-full">
@@ -107,13 +129,23 @@ export default function TeamDashboard({ team }: TeamDashboardProps) {
         </div>
 
         {/* Save Button */}
-        <div className="flex justify-end">
-          <button
-            onClick={handleSave}
-            className="w-full px-4 py-4 bg-blue-500 text-white rounded hover:bg-blue-700"
-          >
-            Save
-          </button>
+        <div className="flex w-full grow gap-4">
+          <div className="flex justify-end grow">
+            <button
+              onClick={handleSave}
+              className="w-full px-4 py-4 bg-blue-500 text-white rounded hover:bg-blue-700"
+            >
+              Save
+            </button>
+          </div>
+          <div className="flex justify-end grow">
+            <button
+              onClick={handleDelete}
+              className="w-full px-4 py-4 bg-red-500 text-white rounded hover:bg-red-700"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>
