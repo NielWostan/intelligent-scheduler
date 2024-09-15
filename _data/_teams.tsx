@@ -399,4 +399,3 @@ export const teams = [
     time_preference: "middle",
   },
 ];
-console.log(teams.length);

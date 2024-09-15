@@ -29,7 +29,7 @@ export default function AddTeam() {
     setSuccessMessage("");
 
     try {
-      const response = await fetch("/api/addTeam", {
+      const response = await fetch("/api/add-team", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

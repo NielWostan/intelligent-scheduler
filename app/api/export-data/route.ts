@@ -8,8 +8,6 @@ export async function POST(request: Request) {
     // Parse the request body
     const { req } = await request.json();
 
-    console.log("THIS:", req);
-
     // const supabase = createClient();
     // const { error } = await supabase.from("schedule").delete().gt("id", 0);
     // const { data } = await supabase.from("schedule").insert(req);

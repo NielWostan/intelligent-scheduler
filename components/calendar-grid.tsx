@@ -37,7 +37,21 @@ const CalendarGrid = ({ weekgames, schedule }: any) => {
               {days.map((day, colIndex) => (
                 <div
                   key={`${rowIndex}-${colIndex}`}
-                  className="flex-grow flex border border-gray-300 justify-center items-center h-12 hover:bg-blue-100 cursor-pointer text-xs transition-all"
+                  className={`flex-grow flex border border-gray-300 justify-center items-center h-12 hover:bg-blue-100 cursor-pointer text-xs transition-all ${
+                    schedule?.filter(
+                      (item: any) =>
+                        item.scheduledDay == day &&
+                        item.scheduledTime == timeSlot
+                    ).length > 0
+                      ? schedule.filter(
+                          (item: any) =>
+                            item.scheduledDay == day &&
+                            item.scheduledTime == timeSlot
+                        )[0].isCompromised
+                        ? "opacity-50"
+                        : ""
+                      : null
+                  }`}
                 >
                   {schedule?.filter(
                     (item: any) =>

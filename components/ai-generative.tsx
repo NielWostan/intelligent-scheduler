@@ -9,7 +9,7 @@ import { parseExportGames } from "@/tools/parse-export-games";
 export default function AIGenerative({ allGames, schedule }: any) {
   const [response, setResponse] = useState<any>(
     schedule.length > 0
-      ? parseExportGames(schedule)
+      ? parseExportGames(JSON.parse(schedule))
       : [
           { week: 1, games: [] },
           { week: 2, games: [] },
@@ -160,9 +160,8 @@ export default function AIGenerative({ allGames, schedule }: any) {
 
   const exportData = async () => {
     setExporting(true);
-    console.log(response);
     try {
-      const res = await fetch("/api/exportData", {
+      const res = await fetch("/api/export-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

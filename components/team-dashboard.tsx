@@ -26,7 +26,7 @@ export default function TeamDashboard({ team }: TeamDashboardProps) {
 
   const handleSave = async () => {
     try {
-      const res = await fetch("/api/updateTeam", {
+      const res = await fetch("/api/update-team", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

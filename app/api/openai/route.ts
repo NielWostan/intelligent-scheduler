@@ -27,9 +27,6 @@ export async function POST(request: Request) {
 
     const data = await openaiResponse.json();
 
-    // Debugging the response from OpenAI
-    console.log("OpenAI Response:", data);
-
     if (data.choices && data.choices.length > 0) {
       return NextResponse.json({
         reply: data.choices[0].message.content.trim(),

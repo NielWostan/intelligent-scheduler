@@ -154,7 +154,10 @@ export default async function Content() {
   return (
     <>
       <Games allGames={formattedGames} />
-      <AIGenerative allGames={formattedGames} schedule={schedule} />
+      <AIGenerative
+        allGames={formattedGames}
+        schedule={JSON.stringify(schedule)}
+      />
     </>
   );
 }
