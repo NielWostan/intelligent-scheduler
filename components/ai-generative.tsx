@@ -47,29 +47,55 @@ export default function AIGenerative({ allGames, schedule }: any) {
 
   const handleSendMessage = async () => {
     setLoading(true);
-    try {
-      const res = await fetch("/api/openai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: prompt }),
-      });
+    let retryCount = 0;
+    const maxRetries = 3;
+    let successful = false;
 
-      const data = await res.json();
-      setResponse((prev: any) => {
-        return prev.map((item: any) => {
-          if (item.week == currentWeek) {
-            return { ...item, games: JSON.parse(data.reply.replace(/`/g, "")) }; // Update the games for the correct week
-          }
-          return item; // Keep other weeks unchanged
+    while (retryCount < maxRetries && !successful) {
+      try {
+        const res = await fetch("/api/openai", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: prompt }),
         });
-      });
-      setHasGeneratedSchedule(true);
-    } catch (error) {
-      console.error("Error:", error);
-      setResponse("Something went wrong.");
+
+        const data = await res.json();
+
+        // Attempt to parse the reply as JSON
+        try {
+          const parsedGames = JSON.parse(data.reply.replace(/`/g, ""));
+
+          // If parsing succeeds, update the state
+          setResponse((prev: any) => {
+            return prev.map((item: any) => {
+              if (item.week == currentWeek) {
+                return { ...item, games: parsedGames }; // Update the games for the correct week
+              }
+              return item; // Keep other weeks unchanged
+            });
+          });
+          setHasGeneratedSchedule(true);
+          successful = true; // Mark as successful
+        } catch (parseError) {
+          retryCount++;
+          window.alert(
+            `Error parsing JSON (Attempt ${retryCount} of ${maxRetries}): Retrying`
+          );
+          console.error(parseError);
+        }
+      } catch (error) {
+        console.error("Error fetching from /api/openai:", error);
+        window.alert("Something went wrong.");
+        break; // If there's an error fetching the response, exit the loop
+      }
     }
+
+    if (!successful) {
+      window.alert("Failed to generate a valid schedule after 3 attempts.");
+    }
+
     setLoading(false);
   };
 
@@ -77,30 +103,62 @@ export default function AIGenerative({ allGames, schedule }: any) {
 
   const handleUpdateMessage = async () => {
     setLoading(true);
-    try {
-      const res = await fetch("/api/openai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: updatePrompt }),
-      });
+    let retryCount = 0;
+    const maxRetries = 3;
+    let successful = false;
 
-      const data = await res.json();
-      setResponse((prev: any) => {
-        return prev.map((item: any) => {
-          if (item.week == currentWeek) {
-            return { ...item, games: JSON.parse(data.reply) }; // Update the games for the correct week
-          }
-          return item; // Keep other weeks unchanged
+    while (retryCount < maxRetries && !successful) {
+      try {
+        const res = await fetch("/api/openai", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: updatePrompt }),
         });
-      });
-    } catch (error) {
-      console.error("Error:", error);
-      setResponse("Something went wrong.");
+
+        const data = await res.json();
+
+        // Attempt to parse the reply as JSON
+        try {
+          const parsedGames = JSON.parse(data.reply);
+
+          // If parsing succeeds, update the state
+          setResponse((prev: any) => {
+            return prev.map((item: any) => {
+              if (item.week === currentWeek) {
+                return { ...item, games: parsedGames }; // Update the games for the correct week
+              }
+              return item; // Keep other weeks unchanged
+            });
+          });
+
+          successful = true; // Mark as successful
+          setUpdateText("");
+        } catch (parseError) {
+          retryCount++;
+          window.alert(
+            `Error parsing JSON (Attempt ${retryCount} of ${maxRetries}): Retrying`
+          );
+          console.error(parseError);
+        }
+      } catch (error) {
+        console.error("Error fetching from /api/openai:", error);
+        window.alert("Something went wrong.");
+        break; // If there's an error fetching the response, exit the loop
+      }
     }
+
+    if (!successful) {
+      window.alert(
+        "Failed to update the schedule after 3 attempts. Please resend request."
+      );
+    }
+
     setLoading(false);
   };
+
+  console.log(updateText);
 
   const exportData = async () => {
     setExporting(true);
@@ -116,7 +174,7 @@ export default function AIGenerative({ allGames, schedule }: any) {
       const data = await res.json();
     } catch (error) {
       console.error("Error:", error);
-      setResponse("Something went wrong.");
+      window.alert("Something went wrong.");
     }
     setExporting(false);
   };
@@ -133,6 +191,8 @@ export default function AIGenerative({ allGames, schedule }: any) {
         loading={loading}
         exportData={exportData}
         exporting={exporting}
+        updateText={updateText}
+        setUpdateText={setUpdateText}
       />
       <ChatBox
         currentWeek={currentWeek}
@@ -140,6 +200,8 @@ export default function AIGenerative({ allGames, schedule }: any) {
         setUpdateText={setUpdateText}
         handleUpdateMessage={handleUpdateMessage}
         hasGeneratedSchedule={response[currentWeek - 1].games.length > 0}
+        loading={loading}
+        exporting={exporting}
       />
     </div>
   );

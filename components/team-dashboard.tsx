@@ -35,7 +35,11 @@ export default function TeamDashboard({ team }: TeamDashboardProps) {
       });
 
       const data = await res.json();
-      console.log(data);
+      if (res.ok) {
+        window.alert("Team updated successfully.");
+      } else {
+        window.alert("An error occurred. Please try again.");
+      }
     } catch (error) {
       console.error("Error:", error);
     }

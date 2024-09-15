@@ -48,8 +48,10 @@ export default function AddTeam() {
           day_constraint_2: "",
           time_preference: "",
         });
+        window.alert("Team added successfully.");
       } else {
         setError(result.error || "Something went wrong.");
+        window.alert("An error occurred. Please try again.");
       }
     } catch (error) {
       setError("Error adding team. Please try again.");

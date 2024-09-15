@@ -14,6 +14,8 @@ interface ScheduleProps {
   loading: boolean;
   exportData: () => void;
   exporting: boolean;
+  updateText: string;
+  setUpdateText: (text: string) => void;
 }
 
 export default function Schedule({
@@ -25,6 +27,8 @@ export default function Schedule({
   loading,
   exportData,
   exporting,
+  updateText,
+  setUpdateText,
 }: ScheduleProps) {
   return (
     <div
@@ -40,7 +44,10 @@ export default function Schedule({
                 ? "bg-gray-300 cursor-not-allowed"
                 : "hover:bg-gray-200"
             }`}
-            onClick={() => setCurrentWeek(currentWeek - 1)}
+            onClick={() => {
+              setCurrentWeek(currentWeek - 1);
+              setUpdateText("");
+            }}
             disabled={currentWeek <= 1}
           >
             {"<"}
@@ -58,7 +65,10 @@ export default function Schedule({
                 ? "bg-gray-300 cursor-not-allowed"
                 : "hover:bg-gray-200"
             }`}
-            onClick={() => setCurrentWeek(currentWeek + 1)}
+            onClick={() => {
+              setCurrentWeek(currentWeek + 1);
+              setUpdateText("");
+            }}
             disabled={currentWeek >= 10}
           >
             {">"}
@@ -67,7 +77,7 @@ export default function Schedule({
 
         {/* Generate Schedule Button */}
         <button
-          className="w-1/5 text-black transition p-2 border border-black rounded-lg ml-4 mr-2"
+          className={`w-1/5 text-black transition p-2 border border-black rounded-lg ml-4 mr-2 ${loading ? "cursor-not-allowed" : ""}`}
           onClick={handleSendMessage}
         >
           {!loading ? (
@@ -80,8 +90,9 @@ export default function Schedule({
           )}
         </button>
         <button
-          className="w-1/5 text-black transition bg-blue-500 text-white p-2 rounded hover:bg-blue-700 rounded-lg mx-2"
+          className={`w-1/5 text-black transition bg-blue-500 text-white p-2 rounded hover:bg-blue-700 rounded-lg mx-2 ${loading ? "hover:bg-blue-500 cursor-not-allowed" : ""}`}
           onClick={exportData}
+          disabled={loading}
         >
           {!exporting ? (
             <p>Export</p>
