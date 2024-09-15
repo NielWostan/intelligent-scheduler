@@ -22,7 +22,7 @@ export default function ChatBox({
             ? "bg-gray-200 cursor-not-allowed"
             : "bg-white"
         }`}
-        placeholder="Chat with OpenAI here..."
+        placeholder="Make update requests here..."
         value={updateText}
         onChange={(e) => setUpdateText(e.target.value)}
         disabled={!hasGeneratedSchedule}
